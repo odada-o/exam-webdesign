@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+* {
+    margin: 0; padding: 0;
+    font-size: 14px; color: #222328;
+    line-height: 1.5; text-decoration: none;
+    list-style: none; box-sizing: border-box;
+}
+/* comm */
+.blind {
+    display: block;
+    /* display: none; 스크린 리더가 못 읽음 */
+    overflow: hidden; 
+    text-indent: -9999px; line-height: 0;
+    width: 0; height: 0;
+}
+
+
+.wrap {
+    width: 1200px; margin: 0 auto;
+    /* background: #eee; */
+}
+header {
+    display: flex; justify-content: space-between;
+    height: 100px;
+    border-bottom: 1px solid #002866;
+}
+header h1 a {
+    display: block;
+    width: 151px; height: 100%;
+    background: url(../images/logo.png) no-repeat 0 50%;
+    text-indent: -9999px;
+}
+.nav-depth1 {
+    display: flex;
+}
+.nav-depth1 > li {
+    position: relative;    
+}
+.nav-depth1 > li > a {
+    display: block;
+    height: 100px; padding: 0 40px;
+    line-height: 100px; font-size: 16px;
+}
+.nav-depth1 > li > a:hover {
+    font-weight: bold;
+    color: tomato;
+    border-bottom: 3px solid tomato;
+}
+/* 전체 2depth 메뉴 확대 */
+.nav-depth1:hover .nav-depth2 {
+    height: 135px; padding: 5px 0;
+}
+/* 각각의 2depth 메뉴 확대 */
+.nav-depth2 {
+    overflow: hidden;
+    position: absolute;top: 100px;left: 0; z-index: 1000;
+    width: 100%; padding: 0; height: 0;
+    background: #fff;
+    transition: all .5s;
+}
+.nav-depth2 a {
+    display: block;
+    padding: 5px 0;
+    text-align: center;
+}
+.nav-depth2 a:hover {
+    background: tomato;
+    color: #fff;
+}
+
+.slide {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: tomato;
+}
+.slide ul {
+    position: absolute;top: 0;left: 0;
+}
+.slide img {
+    display: block;
+}
+.container {
+    display: flex; justify-content: space-between;
+    height: 200px; padding: 10px 0;
+}
+.container .tab, .container section {
+    width: 32%;
+}
+.tab {
+    display: flex; justify-content: space-between;
+    position: relative;
+}
+.tab section {
+    width: 49.5%;
+}
+.tab .sec-tit a {
+    display: block;
+    width: 100%; height: 48px;
+    background: #f0f0f0;
+    text-align: center; line-height: 48px;
+    font-weight: normal;
+}
+.tab::after {
+    content: '';
+    position: absolute;top: 48px;left: 0;
+    width: 100%; height: 3px;
+    background: tomato;
+}
+.tab .on .sec-tit a {
+    background: tomato; color: #fff;
+}
+
+.tab .sec-cont {
+    display: none;
+    position: absolute;top: 57px; left: 0;
+    /* bottom: 0; */
+    width: 100%;
+}
+.tab .on .sec-cont {
+    display: block;
+}
+.tab .lst-bbs a {
+    display: block; position: relative;
+    padding: 5px 0 5px 15px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tab .lst-bbs a::before {
+    content: "\f105";
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    position: absolute;top: 50%;left: 0;
+    display: inline-block;
+    transform: translateY(-50%);
+    color: red; font-size: 1em;
+}
+.tab .lst-gallery {
+    display: flex; justify-content: space-between;
+}
+.tab .lst-gallery li {
+    width: 32.5%;
+}
+.tab .lst-gallery a {
+    display: block;
+}
+.tab .lst-gallery img {
+    width: 100%; height: 123px;
+    object-fit: cover; object-position: 50% 50%;
+}
+
+.sec-bnr a {
+    display: block;
+}
+.sec-goto .lst-goto {
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between;    
+    align-content: space-between;
+    height: 180px;
+}
+.lst-goto li {
+    width: 48%;
+}
+.lst-goto a {
+    display: flex;
+    justify-content: center; align-items: center;
+    height: 85px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.lst-goto i {
+    margin-right: 5px;
+    font-size: 2.5em;
+}
+
+footer {
+    display: flex; justify-content: space-between;
+    height: 100px; padding: 0 20px;
+    /* border-top: 1px solid #000; */
+    background-color: #eee;
+}
+footer h1 {
+    display: flex; align-items: center;
+}
+footer h1 a {
+    display: block;
+    width: 159px; height: 39px;
+    background: url(../images/logo-footer.png) no-repeat 0 0;
+    text-indent: -9999px;
+}
+footer .copyright {
+    display: flex; align-items: center;
+}
+footer .sns {
+    display: flex; align-items: center;    
+}
+footer .sns a {
+    padding: 10px;
+}
+footer .sns a::before {
+    display: inline-block;
+    margin: -3px 5px 0 0;
+    vertical-align: middle; 
+    font-family: 'Line Awesome Brands';
+    font-size: 2em;
+}
+footer .sns a:first-child::before {
+    content: "\f09a";
+}
+footer .sns a:nth-child(2)::before {
+    content: "\f16d";
+}
+footer .sns a:last-child::before {
+    content: "\f431";
+}
+
+#modal {
+    display: none; 
+    justify-content: center; align-items: center;
+    position: fixed;top: 0;left: 0;right: 0;bottom: 0;
+    background-color: rgba(0,0,0,.7);
+}
+#modal .box {
+    position: relative;
+    width: 500px; height: 300px; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+#modal .btn-close {
+    position: absolute;top: -20px;right: -20px;
+    width: 70px; height: 70px; 
+    border-radius: 50%; border: none;
+    background: tomato;
+    cursor: pointer;
+}
+#modal .btn-close::before {
+    content: "\f00d";
+    margin-right: -3px;
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+    font-size: 2em;color: #fff;
+}
