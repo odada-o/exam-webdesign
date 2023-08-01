@@ -46,13 +46,27 @@ header {
   font-size: 20px;
   text-align: center;
 }
+.gnb .gnb-depth1 > li:hover > a {
+  color: #3cb149;
+  font-weight: bold;
+}
+/* 이후 상태 : h:, p: 10px 0, op: 1 */
+.gnb .gnb-depth1:hover > li .gnb-depth2 {
+  height: 130px;
+  padding: 10px 0;
+  opacity: 1;
+}
+/* 이전 상태 : height: 0, padding:0, opacity: 0 */
 .gnb .gnb-depth2 {
+  overflow: hidden;
   position: absolute;
-  top: 60px;
+  top: 65px;
   left: 0;
   width: 100%;
-  padding: 10px 0;
+  height: 0;
+  padding: 0;
   background: #434748;
+  transition: all 0.3s;
 }
 .gnb .gnb-depth2 li a {
   display: block;
