@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+:root {
+  --primary: #3cb149;
+  --primarySub: #434748;
+  --default: #333;
+  --white: #fff;
+  --black: #000;
+}
 /* reset */
 * {
   margin: 0;
@@ -8,7 +15,7 @@
   text-decoration: none;
   line-height: 1.5;
   box-sizing: border-box;
-  color: #333;
+  color: var(--default);
 }
 .blind {
   position: absolute;
@@ -23,6 +30,7 @@
 .wrap {
   width: 1200px;
   margin: auto;
+  padding-top: 100vh;
   background: #eee;
 }
 header {
@@ -32,7 +40,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--default);
 }
 .gnb::before {
   content: "";
@@ -41,7 +49,7 @@ header {
   left: 0;
   width: 1200px;
   height: 0;
-  background: #434748;
+  background: var(--primarySub);
   transition: all 0.3s;
 }
 .gnb:hover::before {
@@ -62,7 +70,7 @@ header {
   line-height: 100px;
 }
 .gnb .gnb-depth1 > li:hover > a {
-  color: #3cb149;
+  color: var(--primary);
   font-weight: bold;
 }
 /* 이후 상태 : height:, padding: 10px 0, opacity: 1 */
@@ -90,7 +98,7 @@ header {
   text-align: center;
 }
 .gnb .gnb-depth2 li a:hover {
-  background: #3cb149;
+  background: var(--primary);
   color: #fff;
 }
 
@@ -124,7 +132,7 @@ main {
 .sec-g .sec-tit {
   margin-bottom: 10px;
   padding-bottom: 2px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--primarySub);
   font-size: 20px;
 }
 .sec-g .link-more {
@@ -191,4 +199,42 @@ footer {
 }
 .family a {
   padding: 10px;
+}
+
+.modal-dimmed {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.modal-box {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  padding: 50px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+.modal-box .modal-cont {
+  margin-top: 30px;
+}
+.modal-box .btn-close {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
