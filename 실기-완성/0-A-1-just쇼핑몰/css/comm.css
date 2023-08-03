@@ -171,6 +171,7 @@
   text-align: center;
   font-size: 16px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 /* 활성화 tab */
 .tabs-wrap .on .tit {
@@ -281,7 +282,7 @@
 
 /* modal */
 .modal-dimmed {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -291,9 +292,14 @@
   bottom: 0;
   z-index: 10;
   background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
 }
 .modal-dimmed.active {
-  display: flex;
+  /* display: flex; */
+  visibility: visible;
+  opacity: 1;
 }
 .modal-box {
   position: relative;
