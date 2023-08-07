@@ -12,9 +12,11 @@
 
 .inner {
   display: flex;
+  height: 850px;
   background: lightblue;
 }
 header {
+  position: relative;
   width: 200px;
   background: lightpink;
 }
@@ -70,6 +72,35 @@ header {
 #gnb .depth2 a:hover {
   background: #1d7bff;
   color: #fff;
+}
+
+/* util */
+.util {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.util a {
+  display: block;
+  padding: 5px;
+  margin-top: -5px;
+}
+.util a::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 1px;
+  height: 15px;
+  background: red;
+  /* opacity: 0.5; */
+}
+.util span {
+  display: block;
+  opacity: 0.5;
 }
 
 main {
