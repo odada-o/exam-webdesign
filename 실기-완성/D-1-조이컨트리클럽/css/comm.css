@@ -84,6 +84,7 @@ header {
   transform: translateX(-50%);
 }
 .util a {
+  position: relative;
   display: block;
   padding: 5px;
   margin-top: -5px;
@@ -91,12 +92,15 @@ header {
 .util a::before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 0;
   width: 1px;
   height: 15px;
   background: red;
   /* opacity: 0.5; */
+}
+.util a:first-child::before {
+  display: none;
 }
 .util span {
   display: block;
