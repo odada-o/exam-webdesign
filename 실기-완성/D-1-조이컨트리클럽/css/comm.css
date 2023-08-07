@@ -9,3 +9,70 @@
   line-height: 1.5;
   color: #333;
 }
+
+.inner {
+  display: flex;
+  background: lightblue;
+}
+header {
+  width: 200px;
+  background: lightpink;
+}
+.logo a {
+  display: block;
+  /* text-align: center; */
+  /* img 태그가 inline 일 경우 */
+}
+.logo img {
+  display: block;
+  margin: auto;
+}
+#gnb .depth1 {
+  padding: 0 30px;
+}
+#gnb .depth1 > li > a {
+  display: block;
+  position: relative;
+  padding: 11px 0 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+#gnb .depth1 > li > a:hover {
+  color: #1d7bff;
+}
+#gnb .depth1 > li > a::after {
+  content: ">";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  opacity: 0.5;
+}
+#gnb .active .depth2 {
+  max-height: 500px;
+  padding-top: 10px;
+}
+#gnb .depth2 {
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  transition: all .3s;
+}
+#gnb .depth2 a {
+  display: block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #555;
+}
+#gnb .depth2 a:hover {
+  background: #1d7bff;
+  color: #fff;
+}
+
+main {
+  flex-grow: 1;
+  /* width: calc(100% - 200px); */
+  background: lightyellow;
+}
+footer {
+  height: 100px;
+  background: lightgreen;
+}
