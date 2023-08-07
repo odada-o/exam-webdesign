@@ -45,7 +45,12 @@ header {
   top: 10px;
   right: 0;
   opacity: 0.5;
+  transition: all .3s;
 }
+#gnb .depth1 > .active > a::after {
+  transform: rotate(90deg);
+}
+
 #gnb .active .depth2 {
   max-height: 500px;
   padding-top: 10px;
