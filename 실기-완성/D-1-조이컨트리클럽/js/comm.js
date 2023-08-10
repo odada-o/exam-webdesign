@@ -13,12 +13,23 @@ $(function () {
   $("#gnb .link-depth1").on("click", function(){
     if($(this).parent().hasClass("active")){
       // 만약 .active 가지고 있다면
-      $(this).parent().removeClass("active");
+      // $(this).parent().removeClass("active");
+      $(this).next().slideUp();
     }else{
       // 가지고 있지 않다면
-      $(".depth1 > li").removeClass("active");
-      $(this).parent().addClass("active")
+      // $(".depth1 > li").removeClass("active");
+      // $(this).parent().addClass("active")
+      $(".depth2").slideUp();
+      $(this).next().slideDown();
     }
+  })
 
+  // tabs
+  // .tab-tit button을 클릭했을 때
+  $(".tab-tit button").on("click", function(){
+    // .tab에 있는 .active 삭제
+    $(".tab").removeClass("active")
+    $(this).parents(".tab").addClass("active")
   })
 });
+

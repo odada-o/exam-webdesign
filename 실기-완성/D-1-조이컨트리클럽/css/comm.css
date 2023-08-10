@@ -12,8 +12,6 @@
 
 .inner {
   display: flex;
-  height: 850px;
-  background: lightblue;
 }
 header {
   position: relative;
@@ -56,12 +54,14 @@ header {
 #gnb .active .depth2 {
   max-height: 500px;
   padding-top: 10px;
+  opacity: 1;
 }
 #gnb .depth2 {
   overflow: hidden;
   max-height: 0;
   padding-top: 0;
-  transition: all .3s;
+  opacity: 0;
+  /* transition: all .3s; */
 }
 #gnb .depth2 a {
   display: block;
@@ -108,10 +108,147 @@ header {
 }
 
 main {
+  position: relative;
   flex-grow: 1;
-  /* width: calc(100% - 200px); */
-  background: lightyellow;
+  width: calc(100% - 200px);
 }
+.quick {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+.quick a {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.quick img {
+  display: block;
+  width: 80px;
+}
+
+
+.slide {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+.slide ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* animation: ani-slide 10s cubic-bezier(0.72, 0.01, 0.26, 0.99) infinite; */
+}
+@keyframes ani-slide {
+  0% {top: 0;}
+  30% {top: 0;}
+  33% {top: -100%;}
+  63% {top: -100%;}
+  66% {top: -200%;}
+  96% {top: -200%;}
+  100% {top: 0;}
+}
+.slide img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 0 50%;
+}
+
+.banner {
+  height: 200px;
+  padding: 20px;
+}
+.banner a {
+  display: block;
+}
+.banner img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+
+.tabs-wrap {
+  position: relative;
+  height: 250px;
+  margin: 20px;
+  padding-top: 60px;
+}
+.tabs-wrap::before {
+  content: '';
+  position: absolute;
+  top: 47px;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 3px;
+  background: blue;
+}
+.tabs-wrap .tab-tit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  border: 3px solid #ccc;
+  border-bottom: 3px solid blue;
+  background: #eee;
+  text-align: center;
+}
+.tabs-wrap .tab-tit button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+.tabs-wrap .active .tab-tit {
+  z-index: 10;
+  border: 3px solid blue;
+  border-bottom: 3px solid #fff;
+  background: #fff;
+}
+.tabs-wrap .tit-gallery {
+  left: 147px;
+}
+.tabs-wrap .tab-cont {
+  display: none;
+}
+.tabs-wrap .active .tab-cont {
+  display: block;
+}
+.lst-bbs a {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+.lst-bbs a p {
+  overflow: hidden;
+  width: 75%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+.lst-gallery {
+  display: flex;
+  justify-content: space-between;
+}
+.lst-gallery li {
+  width: 24%;
+}
+.lst-gallery img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
 footer {
   height: 100px;
   background: lightgreen;
