@@ -24,6 +24,7 @@ $(function () {
     }
   })
 
+
   // tabs
   // .tab-tit button을 클릭했을 때
   $(".tab-tit button").on("click", function(){
