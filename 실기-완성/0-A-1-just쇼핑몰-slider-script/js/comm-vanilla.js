@@ -1,18 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // 모달
-    const modalWrap = document.querySelector('#modal');
-    const modalBtn = modalWrap.querySelector('button');
-    const listbbsEl = document.querySelectorAll('.lst-bbs li');
+    // 슬라이드
+    let now = 0;
+    const slideCount = document.querySelectorAll('.lst-slide li').length;
+    const lstSlide = document.querySelector('.lst-slide');
 
-    modalWrap.classList.remove('active');
+    setInterval(function () {
+        slide();
+    }, 3000);
 
-    listbbsEl[0].addEventListener('click', function () {
-        modalWrap.classList.add('active');
-    });
-
-    modalBtn.addEventListener('click', function () {
-        modalWrap.classList.remove('active');
-    });
+    function slide() {
+        now = (now + 1) % slideCount;
+        lstSlide.style.top = 100 * now * -1 + '%';
+    }
 
     // 탭
     const tabEl = document.querySelectorAll('.tab-item');
@@ -27,17 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 슬라이드
-    let now = 0;
-    const slideCount = document.querySelectorAll('.lst-slide li').length;
-    const lstSlide = document.querySelector('.lst-slide');
+    // 모달
+    const modalWrap = document.querySelector('#modal');
+    const modalBtn = modalWrap.querySelector('button');
+    const listbbsEl = document.querySelectorAll('.lst-bbs li');
 
-    setInterval(function () {
-        slide();
-    }, 3000);
+    modalWrap.classList.remove('active');
 
-    function slide() {
-        now = (now + 1) % slideCount;
-        lstSlide.style.top = 100 * now * -1 + '%';
-    }
+    listbbsEl[0].addEventListener('click', function () {
+        modalWrap.classList.add('active');
+    });
+
+    modalBtn.addEventListener('click', function () {
+        modalWrap.classList.remove('active');
+    });
 });

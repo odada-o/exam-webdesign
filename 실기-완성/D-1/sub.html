@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>조이컨트리클럽</title>
+        <!-- <link rel="stylesheet" href="./assets/css/comm.css" /> -->
+        <style>
+            .wrap {
+                display: flex;
+                flex-direction: column;
+                width: 1280px;
+                height: 100vh;
+                margin: 0 auto;
+                background: #eee;
+            }
+            #header {
+                height: 100px;
+                background: lightblue;
+            }
+            .content {
+                display: flex;
+                flex-grow: 1;
+            }
+            #main {
+                flex-grow: 1;
+                background: blue;
+            }
+            .aside {
+                width: 300px;
+                background: red;
+            }
+            #footer {
+                height: 100px;
+                background: lightcyan;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <header id="header">header</header>
+            <div class="content">
+                <main id="main">main</main>
+                <div class="aside">aside</div>
+            </div>
+            <footer id="footer">footer</footer>
+        </div>
+    </body>
+</html>

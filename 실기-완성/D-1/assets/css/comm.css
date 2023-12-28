@@ -1,0 +1,30 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    list-style: none;
+}
+.inner {
+    display: flex;
+    height: calc(100vh - 100px);
+    background: lightblue;
+}
+#header {
+    width: 200px;
+    background: red;
+}
+.content {
+    flex-grow: 1;
+    /* width: calc(100% - 200px); */
+    background: blue;
+}
+
+#footer {
+    height: 100px;
+    background: lightcoral;
+}
