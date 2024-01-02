@@ -2,7 +2,7 @@ $(function () {
     // 모달
     const modalWrap = $('#modal');
     const modalBtn = modalWrap.find('button');
-    const listbbsEl = $('.lst-bbs li');
+    const listbbsEl = $('.lst-bbs li:first-child');
 
     modalWrap.removeClass('active');
 
@@ -35,6 +35,10 @@ $(function () {
     }
 
     setInterval(function () {
+        //나머지 연산자(%)는 왼쪽 피연산자를 오른쪽 피연산자로 나눴을 때의 나머지를 구합니다.
+        // 1(now) = (0(now) + 1) % 3
+        // 2(now) = (1(now) + 1) % 3
+        // 0(now) = (2(now) + 1) % 3
         now = (now + 1) % slideCount;
         updateSlidePosition();
     }, 3000);
