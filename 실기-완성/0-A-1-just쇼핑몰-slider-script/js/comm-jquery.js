@@ -1,13 +1,4 @@
 $(function () {
-     $("#gnb .depth1 > li").on("mouseenter focusin", function() {
-        $(this).find(".depth2").slideDown();
-    });
-
-    $("#gnb .depth1 > li").on("mouseleave focusout", function() {
-        $(this).find(".depth2").slideUp();
-    });
-
-    
     // 모달
     const modalWrap = $('#modal');
     const modalBtn = modalWrap.find('button');
