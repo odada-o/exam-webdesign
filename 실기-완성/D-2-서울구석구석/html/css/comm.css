@@ -86,17 +86,25 @@ nav {
     font-size: 18px;
     font-weight: 500;
 }
+.nav-depth1 > li {
+    position: relative;
+}
 .nav-depth2 {
+    /* position: absolute;
+    top: 0;
+    left: 100%; */
     overflow: hidden;
     max-height: 0;
     background: #eee;
-    transition: max-height 0.5s;
+    transition: all 0.3s;
     /* display: none; */
 }
 .nav-depth2 li a {
     position: relative;
     display: block;
+    min-width: 150px;
     padding: 7px 20px 5px 30px;
+    /* white-space: nowrap; */
 }
 .nav-depth2 li a::before {
     content: '';
