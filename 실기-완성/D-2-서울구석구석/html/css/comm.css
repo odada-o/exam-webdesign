@@ -1,3 +1,4 @@
+/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
     color: #333;
 }
 
+/* layout */
 .wrap {
     display: flex;
     flex-direction: column;
@@ -20,7 +22,6 @@
 
 header {
     width: 200px;
-    background: lightblue;
 }
 
 main {
@@ -58,4 +59,52 @@ main {
 footer {
     height: 100px;
     background: lightgreen;
+}
+
+/* logo */
+h1 a {
+    display: block;
+}
+h1 a img {
+    display: block;
+    width: 160px;
+    height: 100px;
+    margin: 30px auto;
+}
+
+/* nav */
+nav {
+    margin-top: 50px;
+}
+.nav-depth1 > li:hover .nav-depth2 {
+    max-height: 300px;
+}
+.nav-depth1 > li > a {
+    display: block;
+    padding: 18px 20px 15px;
+    border-bottom: 1px solid red;
+    font-size: 18px;
+    font-weight: 500;
+}
+.nav-depth2 {
+    overflow: hidden;
+    max-height: 0;
+    background: #eee;
+    transition: max-height 0.5s;
+    /* display: none; */
+}
+.nav-depth2 li a {
+    position: relative;
+    display: block;
+    padding: 7px 20px 5px 30px;
+}
+.nav-depth2 li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 3px;
+    background: red;
 }
