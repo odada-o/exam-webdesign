@@ -7,8 +7,15 @@
     color: #333;
 }
 
+.wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+}
+
 .inner {
     display: flex;
+    flex: 1;
 }
 
 header {
@@ -17,26 +24,24 @@ header {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     background: lightpink;
 }
 
-footer {
-    height: 100px;
-    background: lightgreen;
-}
-
 .row-1 {
+    flex: 1;
     display: flex;
     height: 400px;
 }
 .row-1 .col-left {
     flex: 1;
-    background: red;
+    background: rgb(226, 226, 226);
 }
 .row-1 .col-right {
     width: 230px;
-    background: blue;
+    background: rgb(183, 183, 183);
 }
 
 .row-2 {
@@ -48,4 +53,9 @@ footer {
 .row-2 .col-right {
     flex: 1;
     background: yellow;
+}
+
+footer {
+    height: 100px;
+    background: lightgreen;
 }
