@@ -116,3 +116,23 @@ nav {
     height: 3px;
     background: red;
 }
+
+/* slide */
+/* .slide {
+    overflow: hidden;
+}
+.slide ul {
+    display: flex;
+    width: 300%;
+    height: 100%;
+}
+.slide li {
+    width: 100%;
+}
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+} */
