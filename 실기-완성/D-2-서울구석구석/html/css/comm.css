@@ -57,8 +57,19 @@ main {
 }
 
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 100px;
+    padding: 10px 20px;
     background: #eee;
+}
+
+footer h1 img {
+    display: block;
+    width: 60%;
+    filter: grayscale(100%);
+    opacity: 0.5;
 }
 
 /* logo */
@@ -191,4 +202,69 @@ h2 {
     display: block;
     width: 100%;
     margin-bottom: 10px;
+}
+
+/* tabs */
+.tabs {
+    display: flex;
+    position: relative;
+}
+.tabs .active h2 {
+    background-color: #bd0000;
+    color: white;
+}
+.tabs h2 {
+    padding: 5px;
+    white-space: nowrap;
+}
+.tabs ul {
+    display: none;
+}
+.tabs .active ul {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+}
+
+.tabs .active.col-right ul {
+    display: flex;
+}
+
+/* modal */
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    height: 300px;
+    background: #fff;
+    border-radius: 20px;
+}
+.modal-box strong {
+    font-size: 30px;
+}
+.modal-box p {
+    font-size: 20px;
+}
+.modal-box button {
+    display: block;
+    padding: 10px 20px;
+    background: #bd0000;
+    border: none;
+    color: #fff;
+    font-size: 20px;
 }

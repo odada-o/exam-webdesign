@@ -18,4 +18,16 @@ $(function () {
         // left 속성을 변경하여 슬라이드 이동
         slideList.css('left', 100 * -now + '%')
     }, 3000)
+
+    // tabs
+    // .tab-title 클릭했을 때
+    $('.tab-title').on('click', function (event) {
+        // 클릭 이벤트를 막기 위해 preventDefault 사용
+        event.preventDefault()
+
+        // .tab에서 .active를 제거하고
+        $('.tab').removeClass('active')
+        // 클릭한 .tab에 .active를 추가
+        $(this).parents('.tab').addClass('active')
+    })
 })
