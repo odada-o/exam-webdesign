@@ -30,4 +30,13 @@ $(function () {
         // 클릭한 .tab에 .active를 추가
         $(this).parents('.tab').addClass('active')
     })
+
+    // modal
+    // .list-bbs li:first-child 클릭했을 때
+    $('.list-bbs li:first-child').on('click', function () {
+        $('#modal').css('display', 'flex')
+    })
+    $('#modalClose').on('click', function () {
+        $('#modal').hide()
+    })
 })
